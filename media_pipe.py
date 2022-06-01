@@ -52,36 +52,38 @@ while True:
     #if len(lm_list) != 0:
     #    print(lm_list)
     k=cv2.waitKey(10)
-    if k == ord('s'):
-        if finger_up:
-            t,i,m,r,p = finger_up
-            if t == 1 and i == 0 and m == 0 and r == 0 and p == 0:
-                res = 6
-            else:
-                res = finger_up.count(1)
-        randStart = np.random.randint(5)+1
-        print('Outcomes:',randStart,res)
-        choosestate=[1,2]
-        state = np.random.choice(choosestate)
+    # if k == ord('s'):
+    #     if finger_up:
+    #         t,i,m,r,p = finger_up
+    #         if t == 1 and i == 0 and m == 0 and r == 0 and p == 0:
+    #             res = 6
+    #         else:
+    #             res = finger_up.count(1)
+    #     randStart = np.random.randint(5)+1
+    #     print('Outcomes:',randStart,res)
+    #     choosestate=[1,2]
+    #     state = np.random.choice(choosestate)
 
-        if (randStart+res)%2==state:
-            OddEven = "You have won press 1 to bat and 2 to bowl"
-            print("You win")
-            flag=selectflag
-        else:
-            print("Comp win")
-            decisionstate=['ball',"bat"]
-            decision=str(np.random.choice(decisionstate))
-            OddEven = ("You have lost, Bot has choosen to "+decision)
-            bow=decisionstate.index(decision)
-            flag=1
-        res=0
+    #     if (randStart+res)%2==state:
+    #         OddEven = "You have won press 1 to bat and 2 to bowl"
+    #         print("You win")
+    #         flag=selectflag
+    #     else:
+    #         print("Comp win")
+    #         decisionstate=['ball',"bat"]
+    #         decision=str(np.random.choice(decisionstate))
+    #         OddEven = ("You have lost, Bot has choosen to "+decision)
+    #         bow=decisionstate.index(decision)
+    #         flag=1
+    #     res=0
 
-    if k==ord('1'):
-        selectflag=0
-    elif k==ord('2'):
-        selectflag=1
-    elif k==ord('b'):
+    # if k==ord('1'):
+    #     selectflag=0
+
+    # elif k==ord('2'):
+    #     selectflag=1
+    flag=0
+    if k==ord('b'):
         if flag==0:
             print("Batting First")
             #print(finger_up)
